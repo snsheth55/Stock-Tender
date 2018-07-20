@@ -4,7 +4,7 @@
   "description": "",
   "main": "main.jsx",
   "scripts": {
-    "start": "webpack-dev-server --watch-content-base --hot",
+    "start": "",
     "webpack": "webpack",
     "nebulis": "node ./node_modules/nebulis-endpoint/index.js"
   },
@@ -26,7 +26,6 @@
     "react": "^16.2.0",
     "react-dom": "^16.3.1",
     "reactify": "^1.1.1",
-    "sass-loader": "^6.0.7",
     "sequelize": "^4.38.0",
     "style-loader": "^0.20.3",
     "vinyl-source-stream": "^1.1.0",
