@@ -13,10 +13,10 @@ app.get('/', (req, res) => {
 });
 app.get('/login', (req, res) => {});
 
-app.post('/createUser', main.createUser);
+app.post('/createUser', main.createUserEntry);
 
 //**  add items to stock
-app.post('/addStock', () => {});
+app.post('/addStock', main.addItemEntry);
 
 //** get stock table
 app.get('/viewStock', () => {});
