@@ -1,14 +1,18 @@
 {
-  "name": "Stock-tender",
+  "name": "Stock-Tender",
   "version": "1.0.0",
   "description": "Stock-inventory manager",
-  "main": "",
+  "main": "postgreSQL-main.js",
   "scripts": {
-    "start": "",
+
+    "start": "node server.js",
     "webpack": "webpack",
     "start:dev": "webpack-dev-server --mode development",
     "nebulis": "node ./node_modules/nebulis-endpoint/index.js"
-
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Team-SnickerDoodle/Stock-Tender.git"
   },
   "author": "Mark Roldma, Jonathan Cespedes, Kenny Siu",
   "license": "ISC",
