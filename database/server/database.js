@@ -1,7 +1,7 @@
 const pg = require('pg');
 
 const db = {}; // db schema object
-const url = ''; // postgres://student:ilovetesting@localhost/postgresql-raw'
+const url = ''; // postgres://username:password@localhost/postgreSQL-main'
 
 pg.connect(
   url,
