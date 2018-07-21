@@ -1,19 +1,16 @@
-const db = require('../models/database');
+// const db = require('./database.js');
+// const Sequelize = require('sequelize');
 
-function createUser(req, res) {}
+// module.exports = {
+//   createUser: (req, res) => {},
 
-function addEntry(req, res) {}
+//   getUser: (req, res) => {},
 
-function deleteEntry(req, res) {}
+//   addItem: (req, res) => {},
 
-function updateEntry(req, res) {}
+//   deleteItem: (req, res) => {},
 
-function accessEntry(req, res) {}
+//   editItem: (req, res) => {},
 
-module.exports = {
-  createUser,
-  addEntry,
-  deleteEntry,
-  updateEntry,
-  accessEntry
-};
+//   showStock: (req, res) => {}
+// };
