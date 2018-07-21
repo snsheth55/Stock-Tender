@@ -30,7 +30,7 @@
     "reactify": "^1.1.1",
     "sequelize": "^4.38.0",
     "vinyl-source-stream": "^1.1.0",
-    "watchify": "^3.2.2"
+    "watchify": "^3.2.2",
     "css-loader": "^0.28.11",
     "style-loader": "^0.20.3"
 

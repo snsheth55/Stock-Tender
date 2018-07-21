@@ -6,10 +6,12 @@ import Product from './Products.js';
 class Content extends Component {
   render() {
     return (
-      <div className="Content">
+      <div>
         <h1>Content</h1>
-        <Ingredient />
-        <Product />
+        <div className="Content">
+          <Ingredient />
+          <Product />
+        </div>
       </div>
     );
   }

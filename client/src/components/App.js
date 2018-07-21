@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { hot } from 'react-hot-loader';
 import Inventory from './Inventory.js';
 import Content from './Content.js';
+import './App.css';
 
 class App extends Component {
   render() {
