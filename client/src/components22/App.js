@@ -7,29 +7,26 @@ class App extends Component {
   constructor(props){
   	super(props);
   	this.state = {
-  		hasUser: false,
-  		username: null, 
-  		password: null, 
-  		userId: null,
-  		failedLogin: false, 
+  		userId: 1,
   		items: [{name: "VODKA", quantity: 5},{name: "RUM", quantity: 10},{name: "WHISKEY", quantity: 4}]
   	};
   	//this.handleSignUp = this.handleSignUp.bind(this);
   	//this.handleLogin = this.handleLogin.bind(this);
-  	 this.getItems = this.getItems.bind(this);
+  	 //this.getItems = this.getItems.bind(this);
   	 this.addItems = this.addItems.bind(this); 
   	// this.getQuantity = this.getQuantity.bind(this); 
   	//this.getRecipes = this.getRecipes.bind(this);
   	//this.makeDrink = this.makeDrink.bind(this); 
   }
 
-  getItems(){
+  componentDidMount(){
   	//send a get reqest to the server for Items tables
   	//ASK FOR ALL THE ITEMS 
   	//THIS WILL BE STATIC
   	//the response object will have an array of all the items with there ids
   	//store items object inside items array in the state
-  	fetch('http://localhost:4000/login', {
+  	console.log("inside the mount11")
+  	fetch('http://localhost:4000/inventory', {
   		method: "GET",
   		headers: {
   			"Content-Type": "application/json; charset=utf-8"
@@ -38,9 +35,9 @@ class App extends Component {
 			    userId: this.state.userId, 
 			    reason: 'getItems'
 			  },
-  		body: JSON.stringify(data)
   	})
   	.then(res => {
+  		console.log("inside the mount22")
   		let newList = [];
   		for(let i = 0; i < res.body.items.length; i++){
   			let newObj = {}
@@ -80,7 +77,7 @@ class App extends Component {
   render() {
     return (
       <div className="App">
-        <Inventory getItems={this.props.getItems} addItem={this.props.addItems} items={this.state.items} />
+        <Inventory addItem={this.props.addItems} items={this.state.items} />
       </div>
     );
   }

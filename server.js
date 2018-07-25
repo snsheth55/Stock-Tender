@@ -1,22 +1,22 @@
 const express = require('express');
 const app = express();
 const path = require('path');
-const body = require('body-parser');
-const main = require('./database/data/postgreSQL-main.js');
-// const eventController = require('./database/server/event-controller-model.js');
+const main = require('./database/postgreSQL-main.js');
+const eventController = require('./database/event-controller-model.js');
+const bodyParser = require('body-parser');
 
-app.use(body.json(), body.urlencoded({ extended: true }));
+app.use(bodyParser.json(), bodyParser.urlencoded({ extended: true }));
 
 //** login get user information
 app.get('/', (req, res) => {
-  console.log('Main page connected');
+  res.sendFile(path.join(__dirname + "/client/public/index.html"));
 });
-app.get('/login', (req, res) => {});
+app.get('/inventory', eventController.userViewStock);
 
-app.post('/createUser', main.createUserEntry);
+app.post('/createUser', eventController.createUserEntry);
 
 //**  add items to stock
-app.post('/addStock', main.addItemEntry);
+app.post('/addStock', eventController.addItemEntry);
 
 //** get stock table
 app.get('/viewStock', () => {});
@@ -28,8 +28,8 @@ app.post('/editStock', () => {});
 app.post('/deleteItem', () => {});
 
 //**
-app.listen(3000, () => {
-  console.log('Listening to port 3000');
+app.listen(4000, () => {
+  console.log('Listening to port 4000');
 });
 
 module.exports = app;

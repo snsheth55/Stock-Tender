@@ -7,7 +7,7 @@ class Inventory extends Component {
   	let inventoryList = []; 
 	for(let i = 0; i < this.props.items.length; i++){
 		const item = <Item key={i} itemId={i} name={this.props.items[i].name} quantity={this.props.items[i].quantity} add={this.props.addItem}/>
-		inventoryList.push(item)
+		inventoryList.push(item);
 	}
     return (
       <div className="Inventory">

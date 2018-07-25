@@ -10,6 +10,7 @@ class Login extends Component {
   	this.state = {
   		hasUser: false,
   		username: null, 
+  		password: null, 
   		userId: null,
   		failedLogin: false, 
   		items: []
@@ -87,8 +88,8 @@ class Login extends Component {
   	fetch('http://localhost:4000/login', {
   		method: "GET",
   		data: {
-  				  username: username,
-				  password: password
+  				  username: this.state.username,
+				  password: this.state.password
   			   },
   		headers: {
   			"Content-Type": "application/json; charset=utf-8"
@@ -123,7 +124,7 @@ class Login extends Component {
   	let username = getElementByName('name1'); 
   }
 
-  handleSignUp(username, password){
+  handleSignUp(){
   	//CHECK THE DATABASE TO SEE IF USER EXISTS
   	//IF YES THEN DISPLAY USER EXISTS PLEASE LOGIN IN 
   	//IF NO THE ADD USERNAME AND PW IN THE USERS TABLE
@@ -131,8 +132,8 @@ class Login extends Component {
 	  	fetch('http://localhost:4000/login', {
 	  		method: "POST",
 	  		data:  {
-	  				username: username,
-  					password: password
+	  				username: this.state.username,
+  					password: this.state.password
 	  			   },
 	  		headers: {
 	  			"Content-Type": "application/json; charset=utf-8"
@@ -151,13 +152,12 @@ class Login extends Component {
 	  		return err;
 	  	})
   }
-
   render() {
     return (
     	// this.state.hasUser === true? <App getItems={this.getItems} addItems={this.addItems} getQuantity={this.getQuantity}/> : 
     	<div>
     	<p>HELLO</p>
-    	<MainPage handleLogin={this.handleLogin} />
+    	<MainPage handleLogin={this.handleLogin} un={this.state.username} pw={this.state.password} />
     	</div>
     	//signUp={this.handleSignUp} login={this.handleLogin} failedLogin={this.state.failedLogin} /> 
     )

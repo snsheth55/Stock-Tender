@@ -9,14 +9,14 @@ class MainPage extends Component {
   	// if(this.props.failedLogin){
   	// 	warning = <p>YOU LOGIN ATTEMPT HAS FAILED PLEASE TRY AGAIN</p>
   	// }
-
   	// this.props.handleLogin
+
     return (
     	<div>
-    <div className="login">
+      <div className="login">
       LOGIN
-      	<input id="1" type="text" name="name1" placeholder="username" />
-        <input id="2" type="text" name="password1" placeholder="password" />
+      	<input onChange={()=>this.handleChange} id="1" type="text" name="name1" placeholder="username" />
+        <input onChange={()=>this.handleChange} id="2" type="text" name="password1" placeholder="password" />
         <button onClick={()=>{this.props.handleLogin()}}>LOGIN</button>
       </div>
       <div className="signUp">
